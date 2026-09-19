@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#1a0005" />
+      <stop offset="100%" stop-color="#0a0a0c" />
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#e61937" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+
+    <!-- Red Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 900;
+      font-size: 42px;
+      fill: #ffffff;
+      letter-spacing: 5px;
+      text-anchor: middle;
+    }
+    .badge-text {
+      font-family: "Courier New", Courier, monospace, sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      fill: #ff2e4d;
+      letter-spacing: 3px;
+      text-anchor: middle;
+    }
+    .subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13.5px;
+      fill: #ff334b;
+      letter-spacing: 3px;
+      text-anchor: middle;
+    }
+    .quote {
+      font-family: "Courier New", Courier, monospace, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      fill: #9999aa;
+      letter-spacing: 2px;
+      text-anchor: middle;
+    }
+    .bracket {
+      stroke: #ff1e38;
+      stroke-width: 3.5;
+      fill: none;
+      stroke-linecap: square;
+    }
+    .main-border {
+      stroke: #ff1e38;
+      stroke-width: 1.5;
+      stroke-opacity: 0.6;
+      fill: none;
+      rx: 16;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1000" height="320" fill="url(#bgGlow)"/>
+  <rect width="1000" height="320" fill="url(#grid)"/>
+
+  <!-- Border Box -->
+  <rect x="25" y="25" width="950" height="270" class="main-border" />
+
+  <!-- Corner Brackets -->
+  <path d="M 55 40 L 40 40 L 40 55" class="bracket" filter="url(#subtleGlow)" />
+  <path d="M 945 40 L 960 40 L 960 55" class="bracket" filter="url(#subtleGlow)" />
+  <path d="M 40 265 L 40 280 L 55 280" class="bracket" filter="url(#subtleGlow)" />
+  <path d="M 960 265 L 960 280 L 945 280" class="bracket" filter="url(#subtleGlow)" />
+
+  <!-- Top Pill Badge -->
+  <g transform="translate(500, 58)">
+    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="#13070a" stroke="#ff2e4d" stroke-width="1.2" stroke-opacity="0.8" />
+    <circle cx="-115" cy="0" r="4.5" fill="#ff1e38" filter="url(#subtleGlow)" />
+    <text x="10" y="4" class="badge-text">BUILDING REAL-WORLD TECH</text>
+  </g>
+
+  <!-- Main Name Title -->
+  <text x="500" y="148" class="title" fill="#ff1e38" stroke="#ff1e38" stroke-width="8" opacity="0.9" filter="url(#glow)">SUJAY VIGNESH RAVI</text>
+  <text x="500" y="148" class="title">SUJAY VIGNESH RAVI</text>
+
+  <!-- Subtitle / Roles -->
+  <text x="500" y="190" class="subtitle">COMPUTER SCIENCE ENGINEER • FULL STACK • AI &amp; DATA SCIENCE DEVELOPER</text>
+
+  <!-- Diamond Icon -->
+  <g transform="translate(500, 222)">
+    <polygon points="0,-7 7,0 0,7 -7,0" fill="#ff1e38" filter="url(#subtleGlow)" />
+  </g>
+
+  <!-- Bottom Code Tagline -->
+  <text x="500" y="260" class="quote">
+    <tspan fill="#ff1e38" font-weight="bold">&lt;/&gt; </tspan>
+    <tspan fill="#b0b8c4">TURNING RANDOM IDEAS INTO PRODUCTION CODE</tspan>
+  </text>
+</svg>
